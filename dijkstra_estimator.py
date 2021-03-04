@@ -59,15 +59,15 @@ class DijkstraEstimator:
             center_lat, center_lng = np.mean([ori_lat, dest_lat]), np.mean([ori_lng, dest_lng])
             between_markers = "".join(["|" + node[node.find("@") + 1:] for node in path])
             if (np.abs(ori_lng - dest_lng) > 0.18) or (np.abs(ori_lat - dest_lat) > 0.18):
-                url = "https://maps.googleapis.com/maps/api/staticmap?center=Singapore&zoom=11&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=AIzaSyAq8wmpB8Zdzz__q-j1itlmkJn7IPPloGw&markers=color:green|size:tiny|" + str(
+                url = "https://maps.googleapis.com/maps/api/staticmap?center=Singapore&zoom=11&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=invalid&markers=color:green|size:tiny|" + str(
                     ori_lat) + "," + str(ori_lng) + "&markers=color:black|size:tiny" + between_markers + "&markers=color:red|size:tiny|" + str(dest_lat) + "," + str(dest_lng)
             elif (np.abs(ori_lng - dest_lng) > 0.08) or (np.abs(ori_lat - dest_lat) > 0.08):
                 url = "https://maps.googleapis.com/maps/api/staticmap?center=" + str(center_lat) + "," + str(
-                    center_lng) + "&zoom=12&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=AIzaSyAq8wmpB8Zdzz__q-j1itlmkJn7IPPloGw&markers=color:green|size:tiny|" + str(
+                    center_lng) + "&zoom=12&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=invalid&markers=color:green|size:tiny|" + str(
                     ori_lat) + "," + str(ori_lng) + "&markers=color:black|size:tiny" + between_markers + "&markers=color:red|size:tiny|" + str(dest_lat) + "," + str(dest_lng)
             else:
                 url = "https://maps.googleapis.com/maps/api/staticmap?center=" + str(center_lat) + "," + str(
-                    center_lng) + "&zoom=13&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=AIzaSyAq8wmpB8Zdzz__q-j1itlmkJn7IPPloGw&markers=color:green|size:small|" + str(
+                    center_lng) + "&zoom=13&size=1024x768&maptype=roadmap%20&style=feature:administrative|visibility:off&style=feature:poi|visibility:off&style=feature:landscape|visibility:off&style=feature:road.arterial|visibility:off&key=invalid&markers=color:green|size:small|" + str(
                     ori_lat) + "," + str(ori_lng) + "&markers=color:black|size:small" + between_markers + "&markers=color:red|size:small|" + str(dest_lat) + "," + str(dest_lng)
             return total_dist, node2node_dist, path, url
         else:
